@@ -24,7 +24,7 @@ cp -r $PROJ_DIR/src '/data/wwwroot/tcs-y.com/'
 cp -r $PROJ_DIR/index.html '/data/wwwroot/tcs-y.com/'
 cp -r $PROJ_DIR/package.json '/data/wwwroot/tcs-y.com/'
 cp -r $PROJ_DIR/tsconfig.json '/data/wwwroot/tcs-y.com/'
-cp -r $PROJ_DIR/webpack.config.json '/data/wwwroot/tcs-y.com/'
+cp -r $PROJ_DIR/webpack.config.js '/data/wwwroot/tcs-y.com/'
 
 echo "---------------拷贝结束-----------------------"
 
