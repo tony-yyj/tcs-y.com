@@ -1,0 +1,14 @@
+{
+  "name": "tcs-y.com",
+  "version": "1.0.0",
+  "description": "主域名页面",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tony",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.29.0"
+  }
+}
