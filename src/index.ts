@@ -1,5 +1,11 @@
-function printMe(str: string): void {
-    console.log('print me ', str);
-}
+import './css/index.less';
 
-printMe('test333');
+declare var Particles: any;
+
+window.onload = function () {
+    Particles.init({
+        selector: '.background',
+        color: ['#DA0463', '#404B69', '#DBEDF3'],
+        connectParticles: true
+    });
+};

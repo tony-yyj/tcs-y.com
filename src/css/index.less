@@ -1,0 +1,48 @@
+@import "./common";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    background: @background;
+    margin: 0;
+    padding: 0;
+}
+
+.background {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.content{
+    position: relative;
+    top: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    text-align: center;
+    color: #fff;
+    .header{
+        font-size: 48px;
+        margin-bottom: 30px;
+    }
+    ul{
+        list-style: none;
+        li{
+            margin: 0 10px;
+            display: inline-block;
+            a{
+                color: #fff;
+                text-decoration: none;
+                &:hover{
+                    color: green;
+                }
+            }
+        }
+    }
+}
