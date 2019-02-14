@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
@@ -58,7 +59,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Output Management',
             filename: 'index.html',
-            template: 'index.html',
+            template: 'src/index.html',
             inject: 'body',
         }),
         extractLess,
@@ -69,7 +70,13 @@ module.exports = {
                 ]
             },
             clearConsole: true,
-        })
+        }),
+        CopyWebpackPlugin([
+            {
+                from: 'src/assets',
+                to: 'assets',
+            }
+        ])
     ],
     output: {
         filename: '[name].bundle.js',
