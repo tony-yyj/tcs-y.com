@@ -1,4 +1,5 @@
 @import "./common";
+@import "./reactor";
 
 *{
     margin: 0;
@@ -19,23 +20,25 @@ body {
     background-size: 1800px;
     background-position-y: -60px;
     background-position-x: center;
-    min-width: 1200px;
+    min-width: 800px;
     margin: 0 auto;
     z-index: 0;
 }
 
 .content{
     margin: 0 auto;
-    width: 1200px;
+    min-width: 800px;
+    max-width: 1200px;
     min-height: 800px;
     color: #fff;
     z-index: 5;
+    position: relative;
     .header{
         position: relative;
-        padding-top: 20px;
         height: 40px;
         display: flex;
         justify-content: space-between;
+        padding: 20px 20px 0 20px;
         h2{
             font-size: 32px;
             color: #52fefe;
@@ -43,16 +46,15 @@ body {
             line-height: 40px;
         }
         nav{
-            position: absolute;
-            right: 0;
             height: 40px;
             line-height: 40px;
             ul{
+                display: flex;
+                justify-content: space-around;
                 li{
                     list-style: none;
-                    float: left;
-                    padding: 0 20px;
                     color: #52fefe;
+                    margin-left: 20px;
                     a{
                         color: #52fefe;
                         text-decoration: none;
@@ -66,156 +68,4 @@ body {
             }
         }
     }
-    .reactor-container{
-        position: absolute;
-        top: 580px;
-        left: 50%;
-        transform: translateX(-50% + 3.5);
-        width: 180px;
-        height: 180px;
-        //margin: 20px auto;
-        border-radius: 50%;
-        background-color: rgb(8, 8, 8);
-        //border: 1px solid rgb(18, 20, 20);
-        //box-shadow: 0 0 32px 8px rgb(18, 20, 20), 0 0 4px 1px rgb(18, 20, 20) inset;
-        .circle{
-            border-radius: 50%;
-        }
-        .abs-center{
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            margin: auto;
-        }
-        .core-inner{
-            width: 30px;
-            height: 30px;
-            border: 5px solid #1b4e5f;
-            background-color: #fff;
-            box-shadow: 0 0 5px 2px #52fefe, 0 0 5px 5px #52fefe inset;
-        }
-        .core-outer{
-            width: 50px;
-            height: 50px;
-            border: 1px solid #52fefe;;
-            background: #fff;
-            box-shadow: 0 0 2px 1px #52fefe, 0 0 5px 2px #52fefe inset;
-        }
-        .core-wrapper{
-            width: 70px;
-            height: 70px;
-            background-color: #073c4b;
-            box-shadow: 0 0 3px 2px #52fefe, 0 0 3px 1px #52fefe inset;
-        }
-        .tunnel{
-            width: 100px;
-            height: 100px;
-            background: #fff;
-            box-shadow: 0 0 3px 1px #52fefe, 0 0 3px 2px #52fefe inset;
-        }
-        .reactor-container-inner{
-            height: 140px;
-            width: 140px;
-            background-color: rgb(22, 26, 27);
-            box-shadow: 0 0 4px 1px #52fefe;
-        }
-        .coil-container{
-            position: relative;
-            width: 100%;
-            height: 100%;
-            animation: reactor-anim;
-            animation-duration: 4s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
-            .coil{
-                position: absolute;
-                width: 30px;
-                height: 20px;
-                top: calc(50% - 70px);
-                left: calc(50% - 15px);
-                transform-origin: 15px 70px;
-                background: #52fefe;
-                box-shadow: 0 0 5px #073c4b inset;
-            }
-            .coil-1 {
-                transform: rotate(0deg);
-            }
-            .coil-2 {
-                transform: rotate(45deg);
-            }
-            .coil-3 {
-                transform: rotate(90deg);
-            }
-            .coil-4 {
-                transform: rotate(135deg);
-            }
-            .coil-5 {
-                transform: rotate(180deg);
-            }
-            .coil-6 {
-                transform: rotate(225deg);
-            }
-            .coil-7 {
-                transform: rotate(270deg);
-            }
-            .coil-8 {
-                transform: rotate(315deg);
-            }
-        }
-
-        @keyframes reactor-anim{
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-    }
-    .face{
-        border: 1px solid #52fefe;
-        width: 200px;
-        height: 200px;
-        overflow: hidden;
-        margin: 0 auto;
-        border-radius: 5px;
-        img{
-            width: 200px;
-            height: auto;
-        }
-    }
-    .link{
-        margin-top: 20px;
-        ul{
-            list-style: none;
-            li{
-                margin: 0 10px;
-                display: inline-block;
-                a{
-                    font-size: 16px;
-                    color: #fff;
-                    text-decoration: none;
-                    &:hover{
-                        color: green;
-                        &::before{
-                            background: green;
-                        }
-                    }
-                    position: relative;
-                    &::before{
-                        content: ' ';
-                        bottom: -2px;
-                        background: #fff;
-                        height: 1px;
-                        width: 100%;
-                        position: absolute;
-                    }
-                }
-            }
-        }
-    }
-
 }
