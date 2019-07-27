@@ -1,0 +1,49 @@
+@bar-w: 30px;
+@bar-h: 5 * @bar-w;
+@counter: 10;
+@loader-w: @counter * @bar-w + 2 * @bar-h;
+@currentColor: red;
+@per: 100% / (@counter - 1);
+@colorA: #63a6c1;
+@colorB: #1e3f57;
+
+.loop(@counter, @i: 1) when(@i <= @counter) {
+  &:nth-child(@{i}) {
+    //margin-left: (@i - .5 * @counter) * @bar-w;
+    animation-delay: @i * 50ms;
+    background: url('/assets/images/iron.jpg') no-repeat;
+    background-size: @counter * 100%, 100%;
+    background-position-y: center;
+    background-position-x: @per * (@i - 1);
+  }
+  .loop(@counter, (@i + 1));
+}
+
+@keyframes bar {
+  0% {
+    transform: none;
+
+  }
+  75%, 100% {
+    transform: rotate(.5 * 360deg) rotate(-1.5 * 360deg);
+
+  }
+}
+
+.loader{
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  -webkit-box-reflect: below 0 linear-gradient(rgba(#fff, 0), rgba(#fff, .7));
+  perspective: 800px;
+  display: flex;
+  justify-content: center;
+  perspective-origin: 150% 150%;
+  .bar{
+    width: @bar-w;
+    height: @bar-h;
+    animation: bar 3s cubic-bezier(.81, .04, .4, .7) infinite;
+    .loop(@counter);
+  }
+}
