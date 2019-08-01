@@ -21,7 +21,6 @@ rm -rf 'src' 'index.html' 'package.json' 'tsconfig.json' 'webpack.config.js'
 echo "---------------开始拷贝-----------------------"
 # 开始拷贝
 cp -r $PROJ_DIR/src '/data/wwwroot/tcs-y.com/'
-cp -r $PROJ_DIR/index.html '/data/wwwroot/tcs-y.com/'
 cp -r $PROJ_DIR/package.json '/data/wwwroot/tcs-y.com/'
 cp -r $PROJ_DIR/tsconfig.json '/data/wwwroot/tcs-y.com/'
 cp -r $PROJ_DIR/webpack.config.js '/data/wwwroot/tcs-y.com/'
