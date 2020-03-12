@@ -1,72 +1,107 @@
 @import "./common";
 @import "./reactor";
-@import "./3d-bar";
+// @import "./3d-bar";
 
-*{
-    margin: 0;
+* {
+    margin : 0;
     padding: 0;
 }
 
-html, body {
+html,
+body {
     background: @background;
-    margin: 0;
-    padding: 0;
+    margin    : 0;
+    padding   : 0;
 }
 
 body {
+    position  : relative;
+    min-height: 100vh;
 }
 
-.bg{
-    background: url('/assets/images/iron-bg.jpg') no-repeat;
-    background-size: 1800px;
+.bg {
+    background           : url('/assets/images/iron-bg.jpg') no-repeat;
+    background-size      : 1800px;
     background-position-y: -60px;
     background-position-x: center;
-    min-width: 800px;
-    margin: 0 auto;
-    z-index: 0;
+    min-width            : 800px;
+    margin               : 0 auto;
+    z-index              : 0;
 }
 
-.content{
-    margin: 0 auto;
-    min-width: 800px;
-    max-width: 1200px;
+.content {
+    margin    : 0 auto;
+    min-width : 800px;
+    max-width : 1200px;
     min-height: 800px;
-    color: #fff;
-    z-index: 5;
-    position: relative;
-    .header{
-        position: relative;
-        height: 40px;
-        display: flex;
+    color     : #fff;
+    z-index   : 5;
+    position  : relative;
+
+    .header {
+        position       : relative;
+        height         : 40px;
+        display        : flex;
         justify-content: space-between;
-        padding: 20px 20px 0 20px;
-        h2{
-            font-size: 32px;
-            color: #52fefe;
-            height: 40px;
+        padding        : 20px 20px 0 20px;
+
+        h2 {
+            font-size  : 32px;
+            color      : #52fefe;
+            height     : 40px;
             line-height: 40px;
         }
-        nav{
-            height: 40px;
+
+        nav {
+            height     : 40px;
             line-height: 40px;
-            ul{
-                display: flex;
+
+            ul {
+                display        : flex;
                 justify-content: space-around;
-                li{
-                    list-style: none;
-                    color: #52fefe;
+
+                li {
+                    list-style : none;
+                    color      : #52fefe;
                     margin-left: 20px;
-                    a{
-                        color: #52fefe;
+
+                    a {
+                        color          : #52fefe;
                         text-decoration: none;
 
                     }
-                    &:hover{
-                        cursor: pointer;
+
+                    &:hover {
+                        cursor       : pointer;
                         border-bottom: 1px solid #52fefe;
                     }
                 }
             }
         }
     }
+
+    .footer {
+        position: absolute;
+        bottom  : -60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        .beian{
+            color: #666;
+            a{
+                color: inherit;
+                text-decoration: none;
+                border-bottom: 1px solid #666;
+                &:hover{
+                    color: #cfcfcf;
+                    border-bottom-color: #cfcfcf;
+                }
+            }
+
+        }
+
+    }
+
 }
